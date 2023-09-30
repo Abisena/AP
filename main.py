@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from ecomerce_api import Auth
+from ecomerce_api import Auth, Crud
 
 app = FastAPI()
 
@@ -10,4 +10,6 @@ async def Start():
         "message": "OK",
     }
 
-app.include_router(Auth.app, tags=['AUTH'], prefix='/Register')
+app.include_router(Auth.app, tags=['AUTH'], prefix='/Auth')
+
+app.include_router(Crud.crud, tags=['CRUD'], prefix='/Crud')
