@@ -16,5 +16,5 @@ class ItemUpdate(BaseModel):
     quantity: int
     description: str
     category: str
-    image: str
+    image: Optional[str]
     rating: float
